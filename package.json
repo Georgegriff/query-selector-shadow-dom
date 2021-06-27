@@ -1,8 +1,28 @@
 {
     "name": "query-selector-shadow-dom",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "use querySelector syntax to search for nodes inside of (nested) shadow roots",
-    "main": "src/querySelectorDeep.js",
+    "main": "./dist/querySelectorShadowDom.cjs",
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": "./src/querySelectorDeep.js",
+            "require": "./dist/querySelectorShadowDom.cjs",
+            "default": "./src/querySelectorDeep.js"
+        },
+        "./plugins/puppeteer": {
+            "require": "./plugins/puppeteer/index.cjs"
+        },
+        "./plugins/playwright": {
+            "require": "./plugins/playwright/index.cjs"
+        },
+        "./plugins/protractor": {
+            "require": "./plugins/protractor/index.cjs"
+        },
+        "./plugins/webdriverio": {
+            "require": "./plugins/webdriverio/index.cjs"
+        }
+    },
     "scripts": {
         "prepublish": "npm run build",
         "prebuild": "npm run lint",
@@ -48,6 +68,7 @@
         "babelrc-rollup": "^3.0.0",
         "eslint": "^7.19.0",
         "jasmine": "^3.1.0",
+        "jsdom": "^16.5.1",
         "karma": "^6.2.0",
         "karma-chrome-launcher": "^2.2.0",
         "karma-coverage": "^2.0.3",

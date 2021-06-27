@@ -3,7 +3,7 @@
  * License Apache-2.0
  */
 
-import { normalizeSelector } from './normalize';
+import { normalizeSelector } from './normalize.js';
 
 /**
 * Finds first matching elements on the page that may be in a shadow root using a complex selector of n-depth

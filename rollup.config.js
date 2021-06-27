@@ -23,9 +23,13 @@ export default {
         })),
         terser()
     ],
-    output: {
+    output: [{
         format: 'iife',
         name: 'querySelectorShadowDom',
         file: 'dist/querySelectorShadowDom.js'
-    }
+    }, {
+        format:"cjs",
+        name: 'querySelectorShadowDom',
+        file: 'dist/querySelectorShadowDom.cjs'
+    }]
 };
